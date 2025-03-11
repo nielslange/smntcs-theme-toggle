@@ -2,10 +2,10 @@
 /**
  * Plugin Name:     SMNTCS Theme Toggle
  * Plugin URI:      https://github.com/nielslange/smntcs-theme-toggle
- * Description:     Toogle theme actication from the admin bar.
+ * Description:     Toggle theme activation from the admin bar.
  * Author:          Niels Lange
  * Author URI:      https://nielslange.de
- * Text Domain:     smntcs-coupon-code-generator-for-wordcamps
+ * Text Domain:     smntcs-theme-toggle
  * Version:         1.0
  * Requires PHP:          5.6
  * Requires at least:     5.5

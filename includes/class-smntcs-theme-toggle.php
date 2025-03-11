@@ -6,12 +6,15 @@
  */
 
 /**
- *  SMNTCS_Theme_Toggle class
+ * SMNTCS_Theme_Toggle class
+ *
+ * @since 1.0
  */
 class SMNTCS_Theme_Toggle {
 	/**
-	 * Initialize the class
+	 * Initialize the class and set its properties.
 	 *
+	 * @since 1.0
 	 * @return void
 	 */
 	public function __construct() {
@@ -23,6 +26,7 @@ class SMNTCS_Theme_Toggle {
 	/**
 	 * Add a menu item to the admin bar.
 	 *
+	 * @since 1.0
 	 * @param WP_Admin_Bar $admin_bar The admin bar object.
 	 * @return void
 	 */
@@ -77,8 +81,9 @@ class SMNTCS_Theme_Toggle {
 	}
 
 	/**
-	 * Enqueue admin styles
+	 * Enqueue admin styles for the theme toggle functionality.
 	 *
+	 * @since 1.0
 	 * @return void
 	 */
 	public function admin_styles() {
@@ -86,17 +91,20 @@ class SMNTCS_Theme_Toggle {
 
 		wp_enqueue_style(
 			'smntcs-theme-toggle-style',
-			$plugin_url . 'assets/css/style.css'
+			$plugin_url . 'assets/css/style.css',
+			[],
+			'1.0'
 		);
 
 		wp_style_add_data( 'smntcs-theme-toggle-style', 'rtl', 'replace' );
 	}
 
 	/**
-	 * Handle theme switch redirect
+	 * Handle theme switch redirect to return to the original page.
 	 *
-	 * @param string $location The redirect location.
-	 * @return string
+	 * @since 1.0
+	 * @param string $location The redirect location URL.
+	 * @return string Modified redirect location URL if return_url is set, original location otherwise.
 	 */
 	public function handle_theme_switch_redirect( $location ) {
 		if ( isset( $_GET['return_url'] ) && strpos( $location, 'themes.php' ) !== false ) {

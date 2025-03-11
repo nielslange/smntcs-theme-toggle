@@ -2,7 +2,7 @@
 
 Contributors: 		nielslange
 Tags: 				Theme, List View, Administration, Theme Switcher, Admin Bar, Developer Tools
-Stable tag: 		1.0.0
+Stable tag: 		1.0
 Tested up to: 		6.7
 Requires PHP: 		7.4
 Requires at least: 	5.2
@@ -43,11 +43,6 @@ SMNTCS Theme Toggle adds a convenient theme switcher to your WordPress admin bar
 1. Upload `smntcs-theme-toggle` to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the `Plugins` menu in WordPress.
 3. Look for the theme toggle icon in your admin bar.
-
-== Screenshots ==
-
-1. Theme toggle dropdown in the admin bar
-2. Quick theme switching interface
 
 == Contribute ==
 

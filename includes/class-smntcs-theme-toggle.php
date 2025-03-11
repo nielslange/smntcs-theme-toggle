@@ -49,7 +49,9 @@ class SMNTCS_Theme_Toggle {
 			$class         = 'theme-toggle';
 			$class        .= $current_theme->get( 'TextDomain' ) === $theme->get( 'TextDomain' ) ? ' is-active' : '';
 			$wpnonce       = wp_create_nonce( 'switch-theme_' . $stylesheet );
-			$current_url   = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$current_url   = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . '://' .
+				sanitize_text_field( wp_unslash( $_SERVER['HTTP_HOST'] ?? '' ) ) .
+				sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ) );
 
 			$admin_bar->add_menu(
 				[

@@ -1,0 +1,65 @@
+#wpadminbar .quicklinks #wp-admin-bar-theme-toggle {
+	.ab-item .ab-icon:before {
+		content: "\f106";
+		top: 2px;
+	}
+
+	.ab-sub-wrapper {
+		overflow-y: auto;
+	}
+
+	.ab-submenu li {
+		.ab-item {
+			opacity: 0.6;
+			overflow: hidden;
+			position: relative;
+			text-overflow: ellipsis;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&.is-active .ab-item {
+			opacity: 1;
+			font-weight: 700;
+		}
+	}
+
+	&.has-many {
+		position: static;
+
+		.ab-sub-wrapper {
+			position: absolute;
+			right: 0;
+			left: 0;
+		}
+
+		.ab-submenu {
+			-moz-columns: 3;
+			-webkit-columns: 3;
+			columns: 3;
+
+			li {
+				position: relative;
+				white-space: normal;
+			}
+		}
+
+		@media only screen and (min-width: 1024px) {
+			.ab-submenu {
+				-moz-columns: 4;
+				-webkit-columns: 4;
+				columns: 4;
+			}
+		}
+
+		@media only screen and (min-width: 1280px) {
+			.ab-submenu {
+				-moz-columns: 5;
+				-webkit-columns: 5;
+				columns: 5;
+			}
+		}
+	}
+}

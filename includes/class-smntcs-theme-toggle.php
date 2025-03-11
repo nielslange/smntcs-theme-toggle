@@ -1,0 +1,107 @@
+<?php
+/**
+ * SMNTCS Theme Toggle
+ *
+ * @package SMNTCS_Theme_Toggle
+ */
+
+/**
+ *  SMNTCS_Theme_Toggle class
+ */
+class SMNTCS_Theme_Toggle {
+	/**
+	 * Initialize the class
+	 *
+	 * @return void
+	 */
+	public function __construct() {
+		add_action( 'admin_bar_menu', [ $this, 'admin_bar_item' ], 500 );
+		add_action( 'admin_enqueue_scripts', [ $this, 'admin_styles' ] );
+		add_filter( 'wp_redirect', [ $this, 'handle_theme_switch_redirect' ] );
+	}
+
+	/**
+	 * Add a menu item to the admin bar.
+	 *
+	 * @param WP_Admin_Bar $admin_bar The admin bar object.
+	 * @return void
+	 */
+	public function admin_bar_item( WP_Admin_Bar $admin_bar ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		$admin_bar->add_menu(
+			[
+				'id'     => 'theme-toggle',
+				'parent' => null,
+				'group'  => null,
+				'title'  => '<span class="ab-icon dashicons dashicons-admin-appearance"></span><span class="ab-label">Themes</span>',
+				'href'   => '#',
+				'meta'   => [ 'title' => __( 'Installed Themes', 'smntcs-theme-toggle' ) ],
+			]
+		);
+
+		$themes = wp_get_themes();
+
+		foreach ( $themes as $stylesheet => $theme ) {
+			$current_theme = wp_get_theme();
+			$class         = 'theme-toggle';
+			$class        .= $current_theme->get( 'TextDomain' ) === $theme->get( 'TextDomain' ) ? ' is-active' : '';
+			$wpnonce       = wp_create_nonce( 'switch-theme_' . $stylesheet );
+			$current_url   = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+			$admin_bar->add_menu(
+				[
+					'id'     => 'theme-' . $stylesheet,
+					'parent' => 'theme-toggle',
+					'title'  => $theme->get( 'Name' ),
+					'href'   => add_query_arg(
+						[
+							'action'     => 'activate',
+							'stylesheet' => $stylesheet,
+							'_wpnonce'   => $wpnonce,
+							'return_url' => urlencode( $current_url ),
+						],
+						admin_url( 'themes.php' )
+					),
+					'meta'   => [
+						'title' => $theme->get( 'Name' ),
+						'class' => $class,
+					],
+				]
+			);
+		}
+	}
+
+	/**
+	 * Enqueue admin styles
+	 *
+	 * @return void
+	 */
+	public function admin_styles() {
+		$plugin_url = plugin_dir_url( SMNTCS_THEME_TOGGLE_PLUGIN_FILE );
+
+		wp_enqueue_style(
+			'smntcs-theme-toggle-style',
+			$plugin_url . 'assets/css/style.css'
+		);
+
+		wp_style_add_data( 'smntcs-theme-toggle-style', 'rtl', 'replace' );
+	}
+
+	/**
+	 * Handle theme switch redirect
+	 *
+	 * @param string $location The redirect location.
+	 * @return string
+	 */
+	public function handle_theme_switch_redirect( $location ) {
+		if ( isset( $_GET['return_url'] ) && strpos( $location, 'themes.php' ) !== false ) {
+			return esc_url_raw( urldecode( $_GET['return_url'] ) );
+		}
+		return $location;
+	}
+}
+
+new SMNTCS_Theme_Toggle();

@@ -1,0 +1,34 @@
+{
+	"name": "nielslange/smntcs-theme-toggle",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Niels Lange",
+			"email": "info@nielslange.de"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"squizlabs/php_codesniffer": "^3.7",
+		"wp-coding-standards/wpcs": "dev-develop",
+		"overtrue/phplint": "^1.2",
+		"phpcsstandards/phpcsutils": "^1.0",
+		"humanmade/psalm-plugin-wordpress": "^2.2"
+	},
+	"scripts": {
+		"phpcbf": "phpcbf --standard=phpcs.xml .",
+		"phpcs": "phpcs --standard=phpcs.xml .",
+		"phplint": "phplint",
+		"psalm": "psalm --no-cache"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

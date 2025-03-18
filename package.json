@@ -29,6 +29,7 @@
 	"scripts": {
 		"build": "sass --style=compressed assets/scss:assets/css && npm run build-rtl",
 		"build-rtl": "rtlcss assets/css/style.css assets/css/style-rtl.css",
+		"build:zip": "bash ./bin/bundle.sh",
 		"phpcbf": "composer run phpcbf",
 		"phpcs": "composer run phpcs",
 		"phplint": "composer run phplint",

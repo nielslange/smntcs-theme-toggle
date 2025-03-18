@@ -19,7 +19,8 @@ class SMNTCS_Theme_Toggle {
 	 */
 	public function __construct() {
 		add_action( 'admin_bar_menu', [ $this, 'admin_bar_item' ], 500 );
-		add_action( 'admin_enqueue_scripts', [ $this, 'admin_styles' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_filter( 'wp_redirect', [ $this, 'handle_theme_switch_redirect' ] );
 	}
 
@@ -86,7 +87,7 @@ class SMNTCS_Theme_Toggle {
 	 * @since 1.0
 	 * @return void
 	 */
-	public function admin_styles() {
+	public function enqueue_scripts() {
 		$plugin_url = plugin_dir_url( SMNTCS_THEME_TOGGLE_PLUGIN_FILE );
 
 		wp_enqueue_style(

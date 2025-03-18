@@ -2,7 +2,7 @@
 
 Contributors: 		nielslange
 Tags: 				Theme, List View, Administration, Theme Switcher, Admin Bar, Developer Tools
-Stable tag: 		1.0
+Stable tag: 		0.1
 Tested up to: 		6.7
 Requires PHP: 		7.4
 Requires at least: 	5.2

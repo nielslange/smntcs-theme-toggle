@@ -1,6 +1,13 @@
 {
 	"name": "nielslange/smntcs-theme-toggle",
+	"description": "Toggle between the default WordPress theme and a custom theme.",
+	"homepage": "https://github.com/nielslange/smntcs-theme-toggle",
 	"type": "wordpress-plugin",
+	"keywords": [
+		"WordPress",
+		"Plugin",
+		"SMNTCS Theme Toggle"
+	],
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
@@ -10,9 +17,9 @@
 	],
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-		"phpcompatibility/phpcompatibility-wp": "^2.1",
-		"squizlabs/php_codesniffer": "^3.7",
-		"wp-coding-standards/wpcs": "dev-develop",
+		"phpcompatibility/phpcompatibility-wp": "^2.1.4",
+		"squizlabs/php_codesniffer": "^3.8",
+		"wp-coding-standards/wpcs": "^3.0",
 		"overtrue/phplint": "^1.2",
 		"phpcsstandards/phpcsutils": "^1.0",
 		"humanmade/psalm-plugin-wordpress": "^2.2"

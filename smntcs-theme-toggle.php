@@ -6,7 +6,7 @@
  * Author: Niels Lange
  * Author URI: https://nielslange.de
  * Text Domain: smntcs-theme-toggle
- * Version: 0.1
+ * Version: 1.0
  * Requires PHP: 7.4
  * Requires at least: 5.5
  * License: GPL v2 or later

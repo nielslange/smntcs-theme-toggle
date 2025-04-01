@@ -1,34 +1,30 @@
 <?xml version="1.0"?>
-<ruleset name="smntcs-coupon-code-generator-for-wordcamps">
-	<description>Coding standards used for checking the SMNTCS Theme Toggle plugin.</description>
+<ruleset name="smntcs-coding-standards">
+	<description>SMNTCS coding standards</description>
 
-	<!-- Arguments-->
+	<!-- PHPCS Command Line Arguments ========================================================== -->
 	<arg value="sp"/>
 	<arg name="colors"/>
 	<arg name="parallel" value="100"/>
 	<arg name="extensions" value="php"/>
 	<arg name="cache" value=".phpcs.cache"/>
 
-	<!-- Include the WordPress rulesets. -->
-	<!-- <rule ref="WordPress-Extra"/>
-	<rule ref="WordPress-Docs"/> -->
+	<!-- WordPress Coding Standards ============================================================ -->
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Docs"/>
 
-	<!-- Exclude files and directories-->
+	<!-- Excluded Directories ================================================================== -->
 	<exclude-pattern>.github/*</exclude-pattern>
 	<exclude-pattern>vendor/*</exclude-pattern>
 	<exclude-pattern>node_modules/*</exclude-pattern>
 
-	<!-- ExcludeInclude sniffs-->
+	<!-- Array Syntax Rules ==================================================================== -->
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax" />
 	<rule ref="Universal.Arrays.DisallowShortArraySyntax">
 		<severity>0</severity>
 	</rule>
 
-	<!-- Exclude sniffs-->
-	<rule ref="WordPress">
-		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
-	</rule>
-
+	<!-- PHP Version Compatibility ============================================================= -->
 	<config name="testVersion" value="7.4-"/>
 	<rule ref="PHPCompatibility"/>
 

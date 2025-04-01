@@ -1,6 +1,17 @@
-node_modules
-vendor
-phplint.cache
+# Dependencies
+node_modules/
+vendor/
+
+# IDE and Editor files
+.idea/*
+
+# PHP Development Tools
 .phplint.cache
-.phplint-cache
-.DS_Store
+.phpcs.cache
+
+# Testing and Reports
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/.phpcs.cache

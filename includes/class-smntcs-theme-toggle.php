@@ -54,7 +54,7 @@ class SMNTCS_Theme_Toggle {
 			$class         = 'theme-toggle';
 			$class        .= $current_theme->get( 'TextDomain' ) === $theme->get( 'TextDomain' ) ? ' is-active' : '';
 			$wpnonce       = wp_create_nonce( 'switch-theme_' . $stylesheet );
-			$current_url   = ( isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . '://' .
+			$current_url   = ( isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http' ) . '://' .
 				sanitize_text_field( wp_unslash( $_SERVER['HTTP_HOST'] ?? '' ) ) .
 				sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ) );
 
@@ -68,7 +68,7 @@ class SMNTCS_Theme_Toggle {
 							'action'     => 'activate',
 							'stylesheet' => $stylesheet,
 							'_wpnonce'   => $wpnonce,
-							'return_url' => urlencode( $current_url ),
+							'return_url' => rawurlencode( $current_url ),
 						],
 						admin_url( 'themes.php' )
 					),
@@ -108,8 +108,12 @@ class SMNTCS_Theme_Toggle {
 	 * @return string Modified redirect location URL if return_url is set, original location otherwise.
 	 */
 	public function handle_theme_switch_redirect( $location ) {
-		if ( isset( $_GET['return_url'] ) && strpos( $location, 'themes.php' ) !== false ) {
-			return esc_url_raw( urldecode( $_GET['return_url'] ) );
+		if (
+			isset( $_GET['return_url'], $_GET['_wpnonce'], $_GET['stylesheet'] ) &&
+			wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'switch-theme_' . sanitize_text_field( wp_unslash( $_GET['stylesheet'] ) ) ) &&
+			strpos( $location, 'themes.php' ) !== false
+		) {
+			return esc_url_raw( urldecode( wp_unslash( $_GET['return_url'] ) ) );
 		}
 		return $location;
 	}

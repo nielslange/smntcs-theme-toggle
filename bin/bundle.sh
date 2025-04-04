@@ -16,6 +16,7 @@ cp -r \
     "$PROJECT_ROOT/README.txt" \
     "$PROJECT_ROOT/LICENSE" \
     "$PROJECT_ROOT/smntcs-theme-toggle.php" \
+	"$PROJECT_ROOT/includes" \
     "$PROJECT_ROOT/assets" \
     "$TEMP_DIR/"
 

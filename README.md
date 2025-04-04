@@ -15,7 +15,7 @@ Adds a list view for installed themes in the WordPress admin area.
 
 1. Upload `smntcs-theme-toggle` to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the `Plugins` menu in WordPress.
-3. Go to `Appearance → List view` to access the themes list view.
+3. Look for the theme toggle icon in your admin bar.
 
 ## Screenshot
 

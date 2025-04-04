@@ -24,4 +24,13 @@
 		<severity>0</severity>
 	</rule>
 
+	<!-- Check valid textdomain -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="smntcs-theme-toggle"/>
+			</property>
+		</properties>
+	</rule>
+
 </ruleset>

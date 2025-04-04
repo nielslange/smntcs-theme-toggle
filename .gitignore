@@ -4,14 +4,12 @@ vendor/
 
 # IDE and Editor files
 .idea/*
+.DS_Store
 
-# PHP Development Tools
-.phplint.cache
-.phpcs.cache
+# Cache files
+**/.cache/
+*.cache
 
 # Testing and Reports
 /test-results/
 /playwright-report/
-/blob-report/
-/playwright/.cache/
-/.phpcs.cache

@@ -39,7 +39,7 @@ class SMNTCS_Theme_Toggle {
 		$admin_bar->add_menu(
 			[
 				'id'     => 'theme-toggle',
-				'parent' => null,
+				'parent' => 'top-secondary',
 				'group'  => null,
 				'title'  => '<span class="ab-icon dashicons dashicons-admin-appearance"></span><span class="ab-label">Themes</span>',
 				'href'   => '#',
@@ -113,10 +113,11 @@ class SMNTCS_Theme_Toggle {
 			wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'switch-theme_' . sanitize_text_field( wp_unslash( $_GET['stylesheet'] ) ) ) &&
 			strpos( $location, 'themes.php' ) !== false
 		) {
-			return esc_url_raw( urldecode( wp_unslash( $_GET['return_url'] ) ) );
+			return esc_url_raw( urldecode( sanitize_text_field( wp_unslash( $_GET['return_url'] ) ) ) );
 		}
 		return $location;
 	}
 }
 
+// Initialise the plugin.
 new SMNTCS_Theme_Toggle();

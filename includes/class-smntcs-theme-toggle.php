@@ -5,6 +5,12 @@
  * @package SMNTCS_Theme_Toggle
  */
 
+// Declare strict types.
+declare(strict_types=1);
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * SMNTCS_Theme_Toggle class
  *

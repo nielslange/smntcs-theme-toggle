@@ -19,12 +19,14 @@ Adds a list view for installed themes in the WordPress admin area.
 
 ## Screenshot
 
-...
+![smntcs-theme-toggle](https://github.com/user-attachments/assets/5b1762a0-c307-4b59-a2eb-cdaff4369467)
 
 ## Plugin page
 
-...
+You can find the plugin on [WordPress.org](https://wordpress.org/plugins/smntcs-theme-toggle/).
 
 ## Changelog
 
-...
+### 1.0 (2025.04.18)
+
+- Initial release.

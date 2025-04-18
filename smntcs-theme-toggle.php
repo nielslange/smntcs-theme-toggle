@@ -1,16 +1,19 @@
 <?php
 /**
- * Plugin Name: SMNTCS Theme Toggle
- * Plugin URI: https://github.com/nielslange/smntcs-theme-toggle
- * Description: Toggle theme activation from the admin bar.
- * Author: Niels Lange
- * Author URI: https://nielslange.de
- * Text Domain: smntcs-theme-toggle
- * Version: 1.0
- * Requires PHP: 7.4
- * Requires at least: 5.5
- * License: GPL v2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Plugin Name:         SMNTCS Theme Toggle
+ * Plugin URI:          https://github.com/nielslange/smntcs-theme-toggle
+ * Description:         A powerful WordPress plugin that adds a theme switcher to the admin bar, allowing administrators to quickly switch between installed themes without leaving their current page. Perfect for theme developers and site administrators who need to test different themes efficiently.
+ * Version:             1.0
+ * Requires at least:   5.5
+ * Requires PHP:        7.4
+ * Author:              Niels Lange
+ * Author URI:          https://nielslange.de
+ * License:             GPL v2 or later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:         smntcs-theme-toggle
+ * Domain Path:         /languages
+ * GitHub Plugin URI:   https://github.com/nielslange/smntcs-theme-toggle
+ * Primary Branch:      main
  *
  * @package SMNTCS_Theme_Toggle
  */

@@ -1,54 +1,64 @@
 === SMNTCS Theme Toggle ===
 
 Contributors: 		nielslange
-Tags: 				Theme, List View, Administration, Theme Switcher, Admin Bar, Developer Tools
+Tags: 				theme, themes, theme switcher, admin bar, theme toggle
 Stable tag: 		1.0
 Tested up to: 		6.8
 Requires PHP: 		7.4
-Requires at least: 	5.2
-License: 			GPLv2
+Requires at least: 	5.5
+License: 			GPL v2 or later
 License URI: 		https://www.gnu.org/licenses/gpl-2.0.html
 
-Toggle theme activation directly from the WordPress admin bar for quick theme switching during development and testing.
+A powerful WordPress plugin that adds a theme switcher to the admin bar, allowing administrators to quickly switch between installed themes without leaving their current page.
 
 == Description ==
 
-SMNTCS Theme Toggle adds a convenient theme switcher to your WordPress admin bar, allowing administrators to quickly switch between installed themes without navigating to the Themes page.
+SMNTCS Theme Toggle is a lightweight and efficient WordPress plugin designed to streamline theme management. It adds a convenient theme switcher to the WordPress admin bar, enabling administrators and developers to quickly switch between installed themes without navigating away from their current page.
 
-= Key Features =
+This plugin is particularly useful for:
+* Theme developers who need to test different themes
+* Site administrators who frequently switch between themes
+* Anyone who wants a more convenient way to manage themes
 
-* Quick theme switching from any admin or front-end page
-* Displays all installed themes in a dropdown menu
-* Maintains your current page location after switching themes
-* Clearly indicates the currently active theme
-* Seamlessly integrates with the WordPress admin bar
-* Supports RTL languages
+= Features =
 
-= Perfect For =
+* Quick theme switching from the admin bar
+* Maintains current page context after theme switching
+* Responsive design with multi-column layout
+* Visual indicators for active theme
+* Secure theme switching with nonce verification
+* Clean and modern user interface
+* Supports all WordPress themes
 
-* Developers testing theme compatibility
-* Site builders comparing themes
-* Administrators managing multiple themes
-* Anyone who frequently switches between themes
+= Security =
 
-= Usage =
-
-1. Look for the "Themes" icon in your admin bar
-2. Click to see a list of all installed themes
-3. Select any theme to instantly switch to it
-4. Continue browsing from your current page
+The plugin implements several security measures:
+* Nonce verification for theme switching
+* Capability checks (only users with `manage_options` can access)
+* Proper sanitization of URLs and data
 
 == Installation ==
 
-1. Upload `smntcs-theme-toggle` to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the `Plugins` menu in WordPress.
-3. Look for the theme toggle icon in your admin bar.
+1. Upload the `smntcs-theme-toggle` folder to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. The theme switcher will appear in the admin bar for users with appropriate permissions
 
-== Contribute ==
+== Frequently Asked Questions ==
 
-Contributions are more than welcome. Simply head over to [Github](https://github.com/nielslange/smntcs-theme-toggle) and open an issue or a pull request.
+= Who can use the theme switcher? =
+
+Only users with administrator privileges can access and use the theme switcher.
+
+= Will switching themes affect my site's content? =
+
+No, switching themes only changes the appearance of your site. All content, settings, and configurations remain unchanged.
+
+= Can I use this plugin with any WordPress theme? =
+
+Yes, the plugin works with all WordPress themes that follow the standard WordPress theme structure.
 
 == Changelog ==
 
-= 1.0 =
-* Initial release
+= 1.0 (2025.04.18) =
+
+- Initial release.

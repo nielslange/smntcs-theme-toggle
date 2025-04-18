@@ -11,6 +11,9 @@ declare(strict_types=1);
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// Include main plugin file to ensure constants are defined.
+require_once dirname( __DIR__ ) . '/smntcs-theme-toggle.php';
+
 /**
  * SMNTCS_Theme_Toggle class
  *

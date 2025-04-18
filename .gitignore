@@ -9,7 +9,11 @@ vendor/
 # Cache files
 **/.cache/
 *.cache
+.phpcs.cache
 
 # Testing and Reports
 /test-results/
 /playwright-report/
+
+
+

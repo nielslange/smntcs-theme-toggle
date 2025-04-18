@@ -1,0 +1,56 @@
+name: Run PHPCS and PHPLint
+
+on: [push, pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  PHPCS:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Show PHPCS sniffs
+        run: ./vendor/bin/phpcs -i
+
+      - name: Show PHPCS version
+        run: ./vendor/bin/phpcs --version
+
+      - name: Run PHP_CodeSniffer
+        run: composer phpcs
+
+  PHPLint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Show PHPLint version info
+        run: ./vendor/bin/phplint --version
+
+      - name: Run PHPLint
+        run: composer phplint
+
+  Psalm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v2
+
+      - name: Show Psalm version info
+        run: ./vendor/bin/psalm --version
+
+      - name: Run Psalm
+        run: composer psalm

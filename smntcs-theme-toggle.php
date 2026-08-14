@@ -3,7 +3,7 @@
  * Plugin Name:         SMNTCS Theme Toggle
  * Plugin URI:          https://github.com/nielslange/smntcs-theme-toggle
  * Description:         A powerful WordPress plugin that adds a theme switcher to the admin bar, allowing administrators to quickly switch between installed themes without leaving their current page. Perfect for theme developers and site administrators who need to test different themes efficiently.
- * Version:             1.0
+ * Version:             1.1
  * Requires at least:   5.5
  * Requires PHP:        7.4
  * Author:              Niels Lange

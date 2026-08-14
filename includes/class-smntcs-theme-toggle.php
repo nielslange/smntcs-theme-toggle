@@ -103,7 +103,7 @@ class SMNTCS_Theme_Toggle {
 			'smntcs-theme-toggle-style',
 			$plugin_url . 'assets/css/style.css',
 			[],
-			'1.0'
+			'1.1'
 		);
 
 		wp_style_add_data( 'smntcs-theme-toggle-style', 'rtl', 'replace' );

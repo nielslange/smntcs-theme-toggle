@@ -2,8 +2,8 @@
 
 Contributors: 		nielslange
 Tags: 				theme, themes, theme switcher, admin bar, theme toggle
-Stable tag: 		1.0
-Tested up to: 		6.8
+Stable tag: 		1.1
+Tested up to: 		7.0
 Requires PHP: 		7.4
 Requires at least: 	5.5
 License: 			GPL v2 or later
@@ -58,6 +58,10 @@ No, switching themes only changes the appearance of your site. All content, sett
 Yes, the plugin works with all WordPress themes that follow the standard WordPress theme structure.
 
 == Changelog ==
+
+= 1.1 (2026.08.14) =
+
+- Test up to WordPress 7.0.
 
 = 1.0 (2025.04.18) =
 

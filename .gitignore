@@ -17,3 +17,6 @@ vendor/
 
 
 
+.phplint.cache
+cypress/screenshots
+cypress/videos

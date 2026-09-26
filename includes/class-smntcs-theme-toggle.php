@@ -28,8 +28,8 @@ class SMNTCS_Theme_Toggle {
 	 */
 	public function __construct() {
 		add_action( 'admin_bar_menu', [ $this, 'admin_bar_item' ], 500 );
-		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_scripts' ], 10, 0 );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 10, 0 );
 		add_filter( 'wp_redirect', [ $this, 'handle_theme_switch_redirect' ] );
 	}
 

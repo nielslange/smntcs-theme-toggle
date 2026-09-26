@@ -1,15 +1,15 @@
 === SMNTCS Theme Toggle ===
 
-Contributors: 		nielslange
-Tags: 				theme, themes, theme switcher, admin bar, theme toggle
-Stable tag: 		1.1
-Tested up to: 		7.0
-Requires PHP: 		7.4
-Requires at least: 	5.5
-License: 			GPL v2 or later
-License URI: 		https://www.gnu.org/licenses/gpl-2.0.html
+Contributors:       nielslange
+Tags:               theme switcher, themes, admin bar, theme toggle, development
+Requires at least:  5.5
+Tested up to:       7.1
+Requires PHP:       7.4
+Stable tag:         1.2
+License:            GPL v2 or later
+License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
-A powerful WordPress plugin that adds a theme switcher to the admin bar, allowing administrators to quickly switch between installed themes without leaving their current page.
+Adds a theme switcher to the admin bar, so administrators can change the active theme from any page.
 
 == Description ==
 
@@ -58,6 +58,12 @@ No, switching themes only changes the appearance of your site. All content, sett
 Yes, the plugin works with all WordPress themes that follow the standard WordPress theme structure.
 
 == Changelog ==
+
+= 1.2 (2026.09.26) =
+
+- Test up to WordPress 7.1
+- Update development dependencies and GitHub Actions
+- Fix the number of arguments passed to hook callbacks
 
 = 1.1 (2026.08.14) =
 

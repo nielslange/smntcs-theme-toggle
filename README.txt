@@ -5,7 +5,7 @@ Tags:               theme switcher, themes, admin bar, theme toggle, development
 Requires at least:  5.5
 Tested up to:       7.1
 Requires PHP:       7.4
-Stable tag:         1.2
+Stable tag:         1.3
 License:            GPL v2 or later
 License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,29 +13,9 @@ Adds a theme switcher to the admin bar, so administrators can change the active 
 
 == Description ==
 
-SMNTCS Theme Toggle is a lightweight and efficient WordPress plugin designed to streamline theme management. It adds a convenient theme switcher to the WordPress admin bar, enabling administrators and developers to quickly switch between installed themes without navigating away from their current page.
+SMNTCS Theme Toggle adds a Themes menu to the admin bar that lists every installed theme. Click a theme to activate it, and you stay on the page you were on, in the admin area or on the front end. The active theme is highlighted.
 
-This plugin is particularly useful for:
-* Theme developers who need to test different themes
-* Site administrators who frequently switch between themes
-* Anyone who wants a more convenient way to manage themes
-
-= Features =
-
-* Quick theme switching from the admin bar
-* Maintains current page context after theme switching
-* Responsive design with multi-column layout
-* Visual indicators for active theme
-* Secure theme switching with nonce verification
-* Clean and modern user interface
-* Supports all WordPress themes
-
-= Security =
-
-The plugin implements several security measures:
-* Nonce verification for theme switching
-* Capability checks (only users with `manage_options` can access)
-* Proper sanitization of URLs and data
+Only administrators see the menu. It is handy for theme developers and for anyone who compares themes often.
 
 == Installation ==
 
@@ -58,6 +38,10 @@ No, switching themes only changes the appearance of your site. All content, sett
 Yes, the plugin works with all WordPress themes that follow the standard WordPress theme structure.
 
 == Changelog ==
+
+= 1.3 (2026.09.27) =
+
+- Rewrite the plugin description
 
 = 1.2 (2026.09.26) =
 

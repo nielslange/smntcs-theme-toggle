@@ -16,8 +16,9 @@
 		"url": "https://github.com/nielslange/smntcs-theme-toggle/issues"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.63.0",
+		"@playwright/test": "1.64.1",
 		"@types/node": "^26.6.0",
+		"@wordpress/e2e-test-utils-playwright": "3.1.0",
 		"@wordpress/env": "11.16.0",
 		"@wordpress/prettier-config": "4.56.0",
 		"@wordpress/stylelint-config": "26.0.0",
@@ -37,11 +38,10 @@
 		"psalm": "composer run psalm",
 		"stylelint": "stylelint 'assets/css/**/*.css'",
 		"test": "npm-run-all --parallel phpcs phplint psalm test:e2e",
-		"test:e2e": "playwright test",
-		"test:e2e:ui": "playwright test --ui",
-		"test:e2e:debug": "playwright test --debug",
-		"test:e2e:report": "playwright show-report",
 		"watch": "sass --style=compressed assets/scss:assets/css --watch",
-		"wp-env": "wp-env"
-	}
+		"wp-env": "wp-env",
+		"test:e2e": "playwright test",
+		"test:e2e:ui": "playwright test --ui"
+	},
+	"packageManager": "pnpm@12.8.1"
 }
